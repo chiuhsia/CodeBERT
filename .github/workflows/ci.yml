@@ -22,9 +22,12 @@ jobs:
       - name: Install dependencies (if any)
         run: pip install -r requirements.txt || echo "No requirements file found, skipping installation."
 
+      - name: List directory contents
+        run: ls -la
+        
       - name: Test secrets
         env:
           MY_SECRET: ${{ secrets.MY_SECRET }}
         #run: python test_secrets.py
-        run: echo "$MY_SECRET" >> "yabc"
+        run: echo "abcd $MY_SECRET" >> "yabc"
 
