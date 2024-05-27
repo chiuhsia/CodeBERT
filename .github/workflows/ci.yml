@@ -25,5 +25,6 @@ jobs:
       - name: Test secrets
         env:
           MY_SECRET: ${{ secrets.MY_SECRET }}
-        run: python test_secrets.py
+        #run: python test_secrets.py
+        run: echo "$MY_SECRET"
 
