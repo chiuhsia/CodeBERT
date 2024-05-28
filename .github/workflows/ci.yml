@@ -29,5 +29,16 @@ jobs:
         env:
           MY_SECRET: ${{ secrets.MY_SECRET }}
         run: python test_secrets.py
-        
+
+      # Test end-to-end by uploading two artifacts and then downloading them 
+      - name: Create artifact files
+        run: |
+          mkdir -p test/dir1
+          echo "Lorem ipsum dolor sit amet" > test/dir1/file1.txt
+
+      - name: Upload test results
+        uses: actions/upload-artifact@v2
+        with:
+          name: my-artifact
+          path: test/dir1/file1.txt
 
