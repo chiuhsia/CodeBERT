@@ -26,8 +26,8 @@ jobs:
         run: ls -la
 
       - name: Test secrets
-        #env:
-        #  MY_SECRET: ${{ secrets.MY_SECRET }}
+        env:
+          MY_SECRET: ${{ secrets.MY_SECRET }}
         run: python test_secrets.py
         
 
