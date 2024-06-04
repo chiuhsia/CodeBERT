@@ -41,4 +41,3 @@ jobs:
         with:
           name: my-artifact
           path: test/dir1/file1.txt
-
